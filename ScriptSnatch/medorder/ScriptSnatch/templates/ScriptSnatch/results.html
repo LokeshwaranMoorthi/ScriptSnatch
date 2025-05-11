@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order Results</title>
+    <link rel="stylesheet" href="{% static 'ScriptSnatch/styles.css' %}">
+</head>
+<body>
+    <div class="order-summary">
+        <h1>Order Summary for {{ patient_name }}</h1>
+        {% if order %}
+        <table border="1">
+            <tr>
+                <th>Medicine</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Status</th>
+            </tr>
+            {% for medicine, details in order.items %}
+            {% if details.in_stock %}
+            <tr>
+                <td>{{ medicine }}</td>
+                <td>Rs. {{ details.price }}</td>
+                <td>
+                    <button onclick="updateQuantity('{{ medicine }}', -1)">-</button>
+                    <span id="qty_{{ medicine }}">1</span>
+                    <button onclick="updateQuantity('{{ medicine }}', 1)">+</button>
+                </td>
+                <td id="total_{{ medicine }}" data-price="{{ details.price }}">Rs. {{ details.price }}</td>
+                <td>In Stock</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </table>
+        <h2>Total Amount: Rs. <span id="grand_total">5.00</span></h2>
+        <button type="button" onclick="placeOrder()">Place Order</button>
+        {% else %}
+        <p>No medicines detected. Please try again.</p>
+        {% endif %}
+        <br>
+        <div class="button">
+            <a href="">Process Another Prescription</a>
+        </div>
+    </div>
+
+    <script src="{% static 'ScriptSnatch/script.js' %}"></script>
+</body>
+</html>
