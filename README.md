@@ -14,7 +14,7 @@
 
 ---
 
-## Tech Stack
+## Tech Stacks
 
 - **Backend**: Django, Python
 - **OCR**: DOCTR
