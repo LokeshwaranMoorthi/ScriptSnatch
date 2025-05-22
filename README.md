@@ -4,6 +4,10 @@ The idea came from noticing how handwritten prescriptions often lead to delays o
 
 **ScriptSnatch** is a web application designed to process handwritten prescription images using OCR (Optical Character Recognition) technology. The app extracts prescription data, matches the extracted medicines against an in-memory inventory, and generates an order for the patient. It leverages **Django**, **Python**, **DOCTR** for OCR, **HTML5**, **CSS**, and **JavaScript** to create a seamless, interactive user experience.
 
+This project helped me get comfortable with Django, DRF, image processing, and building something end-to-end. It also made me realize how tech can solve real-world, small-but-impactful problems.
+
+
+
 ---
 
 ## Features
