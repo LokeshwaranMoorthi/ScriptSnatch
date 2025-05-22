@@ -1,5 +1,7 @@
 # ScriptSnatch
 
+The idea came from noticing how handwritten prescriptions often lead to delays or errors in pharmacies. So, I built a Django web app that lets users upload prescription images. I integrated Doctr OCR to extract text, filtered out medicine names, and matched them against an inventory stored in memory. The system then automatically generated an order summary for the patient.
+
 **ScriptSnatch** is a web application designed to process handwritten prescription images using OCR (Optical Character Recognition) technology. The app extracts prescription data, matches the extracted medicines against an in-memory inventory, and generates an order for the patient. It leverages **Django**, **Python**, **DOCTR** for OCR, **HTML5**, **CSS**, and **JavaScript** to create a seamless, interactive user experience.
 
 ---
